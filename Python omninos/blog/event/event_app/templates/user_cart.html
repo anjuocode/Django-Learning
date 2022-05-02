@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.user_cart
+{
+    background:cornsilk;
+    text-align:center;
+    padding: 35px 35px;
+
+}
+span{
+    padding:10px;
+}
+</style>
+<div class="user_cart">
+{% for cart in my_cart %}
+<h3>Your Name:-{{cart.Name}}</h3>
+<h3>you booked event for {{cart.People}} people</h3>
+<p>On-{{cart.Date}} on<span class="text-success">{{cart.Address}}</span></p>
+<p>Food:-{{cart.Food}}</p>
+{% endfor %}
+</div>
+{% endblock %}

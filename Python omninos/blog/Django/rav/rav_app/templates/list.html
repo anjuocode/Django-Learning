@@ -1,0 +1,43 @@
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Salary</th>
+    <th>Address</th>
+    <th>Branch</th>
+    <th>Position</th>
+    <th><a href="{% url 'form'%}">Add new</th>
+  </tr>
+  {% for i in list%}
+  <tr>
+    <td>{{ i.name}}</td>
+    <td>{{ i.salary}}</td>
+    <td>{{ i.address}}</td>
+    <td>{{ i.branch}}</td>
+    <td>{{ i.position}}</td>
+    <td><a href="{% url 'edit' i.id %}">Update</a>
+        <td> 
+            <a href={% url 'edit' i.id %}>Edit</a>
+            <form action="{% url 'del' i.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+    
+    </td>
+  </tr>
+{% endfor %}
+</table>
+
+
+
+</body>
+</html>

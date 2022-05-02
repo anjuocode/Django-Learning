@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .book_form
+  {
+    text-align:center;
+    background: cornsilk;
+    padding: 30px 30px;
+  }
+
+.form-book{
+  padding: 6px 10px;
+  width: 50%;
+  border:none;
+
+}
+.btn-success {
+  color: #fff;
+  background-color: black;
+}
+
+</style>
+<div class="book_form">
+<form action=" " method="POST">
+    {% csrf_token %}
+     <div class="form-group">
+      <input type="text" name="name" placeholder="Name" class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="number" name="mobile" placeholder="Phone Number" class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="text" name="location" placeholder="Location" class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Email Id" class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="number" name="people" placeholder="Number of Guest" class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="date" name="date" placeholder="Event Date" class="form-book">
+    </div>
+     <div class="form-group">
+      <input type="text" name="event" placeholder="Event type " class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="text" name="food" placeholder="Food categories" class="form-book">
+
+
+    </div>
+    <div class="form-group">
+      <input type="text" name="address" placeholder="Complete Address" class="form-book">
+    </div>
+    <div class="form-group">
+      <input type="text" name="message" placeholder="Your message" class="form-book">
+    </div>
+
+    <button type="submit" class=" btn btn-success form-book">BOOK EVENT</button><br>
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+  </form>
+
+</div>
+
+{% endblock %}

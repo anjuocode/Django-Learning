@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+
+</style>
+<div class="event">
+<div class="container">
+    {% for i in charity %}
+<div class="row">
+<h1>
+{{ i.Event_type }}
+</h1>
+</div>
+<div class="row">
+    {{ i.Desc }}
+    </div>
+<div class="row">
+  <img src="{{i.Image.url}}" width: 1000 height: 1000>
+</div><br>
+<div class="row">
+    {{ i.Food }}
+   </div>
+<div class="row">
+ {{ i.Decorations }}
+</div>
+<div class="row">
+    {{ i.CG }}
+   </div>
+   <div class="row">
+    {{ i.Sponcer }}
+   </div>
+<div class="row">
+    {{ i.user }}
+   </div>
+
+
+{% endfor %}
+</div>
+</div>
+{% endblock %}

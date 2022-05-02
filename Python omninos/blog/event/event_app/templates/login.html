@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .form {
+        text-align:center;
+       margin-top:5%;
+       margin-bottom:10%;
+        padding: 50px 50px;
+    }
+</style>
+
+
+    <div class="form">
+    <form method="post">
+        {% csrf_token %}
+        Username   <input type="text" name="username"><br><br>
+        Password   <input type="password" name="password"><br><br>
+        <button type="submit">Log In </button>
+        
+        </form>
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+
+{% endblock %}

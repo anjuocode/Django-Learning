@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+td{
+    font-size:20px
+}
+.btn2 {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    padding: 13px 83px;
+    width=:100%;
+    margin-right: -120px;
+    margin-top: 14px;
+    font-size: 18px;
+
+    
+  }
+  .btn2:hover {
+    opacity: 1;
+  }
+  .msg{
+      text-align:center;
+  }
+ 
+    </style>
+<title>registration form</title>
+</head>
+
+<h2 ALIGN="CENTER">Registration form</h2>
+
+<form method="post">
+    {% csrf_token %}
+<table border="0" align="center">
+<tbody>
+
+
+
+<tr>
+<td><label for="first_name">First Name: </label></td>
+<td><input  minlength="3" type="text"   name="first_name"/></td>
+</tr>
+
+<tr>
+<td><label for="last_name">Last Name: </label></td>
+<td><input  minlength="3" name="last_name" type="text" /></td>
+</tr>
+
+<tr>
+    <td><label for="username">UserName:</label></td>
+    <td><input  minlength="3" name="username" type="text" /></td>
+    </tr>
+<tr>
+<td><label for="email">Email_Address:</label></td>
+<td><input  maxlength="50" name="email" type="email" /></td>
+</tr>
+
+
+<tr>
+<td><label for="password1">Password1:</label></td>
+<td><input id="password1" minlength="3" name="password1"
+type="password" /></td>
+</tr>
+<tr>
+    <td><label for="password2">Password2:</label></td>
+    <td><input id="password2" minlength="3" name="password2"
+    type="password" /></td>
+    </tr>
+<tr>
+    <td align="right"><input name="sigup" type="Submit" value="Signup"  class="btn2" /></td>
+    </tr>
+    <tr class="msg">
+        <td>
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+        </td>
+    </tr>
+</tbody>
+</table>
+</form>
+
+{% endblock %}
+

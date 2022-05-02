@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .family
+    {
+        background-color: cornsilk !important;
+    }
+    
+</style>
+<div clas="family">
+<div class="container">
+    {% for i in family %}
+<div class="row">
+<h1>
+{{ i.Event_type }}
+</h1>
+</div>
+<div class="row desc">
+    {{ i.Desc }}
+    </div>
+<div class="row">
+  <img src="{{i.Image.url}}" width: 1000 height: 1000>
+</div><br>
+<div class="row">
+    {{ i.Food }}
+   </div>
+<div class="row">
+ {{ i.Decorations }}
+</div>
+<div class="row">
+    {{ i.user }}
+   </div>
+
+
+{% endfor %}
+</div>
+</div>
+{% endblock %}

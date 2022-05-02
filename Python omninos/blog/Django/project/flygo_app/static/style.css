@@ -1,0 +1,41 @@
+/* Navbar style code */
+
+.bg-dark {
+    background-color: mediumturquoise !important;
+}
+.navbar-brand
+{
+  background:#000;
+  margin-right: 3rem;
+  padding-left: inherit;
+  padding-right: inherit;
+  font-style: italic;
+}
+.navbar-dark .navbar-brand 
+{
+  font-style: italic !important;
+}
+.nav-link.active
+{
+  color: blue !important;
+  font-weight: bold;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: black;
+}
+.navbar{
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+.section1
+{
+    position: relative;
+    background-image: url("bk.jpeg");
+    height: 500px;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* footer code */
+

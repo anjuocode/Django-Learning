@@ -1,0 +1,39 @@
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2> Student table</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>name</th>
+    <th>age</th>
+    <th>salary</th>
+    <th>position</th>
+    <th><a href="{% url 'form' %}"> Add new data </a></th>
+    
+    
+  </tr>
+  {% for i in list %}
+  <tr>
+    
+      <td>{{i.name}}</td>
+      <td>{{i.age}} </td>
+      <td>{{i.salary}} </td>
+      <td>{{i.position}}</td>
+      <td> 
+       
+        <a href={% url 'update' i.id %}>Edit</a>
+
+
+     
+ </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<style>
+.booking
+{
+
+    margin-top:16%;
+    background: dimgrey;
+    position:relative;
+}
+.content
+{  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+</style>
+{% extends 'base.html' %}
+{% block content %}
+<div class="booking">
+  <div class="container">
+    <div class="content">
+  <form method="post">
+    {% csrf_token %}
+    <table>{{form.as_table}}</table>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</div>
+</div>
+{% endblock %}
+

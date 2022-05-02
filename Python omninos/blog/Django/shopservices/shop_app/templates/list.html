@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>Shop Service</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Service</th>
+   
+  </tr>
+  {% for i in list%}
+  <tr>
+    <td>{{ i.name}}</td>
+    <td>{{ i.services}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+</body>
+</html>
+
+<a href="{% url 'form' %}">Go to Form</a>

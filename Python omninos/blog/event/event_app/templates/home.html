@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    @media (min-width: 480px)
+    {
+
+
+    }
+
+    .how-section1{
+        
+        padding: 50px;
+        background:#000;
+    }
+    .how-section1 h4{
+        color: #ffa500;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .how-section1 .subheading{
+        color: #3931af;
+        font-size: 20px;
+    }
+    .how-section1 .row
+    {
+        margin-top: 10%;
+    }
+    .how-img 
+    {
+        text-align: center;
+    }
+img
+{
+    width:553px;
+    height:311px;
+}
+.contact
+{
+  text-align: center!important;
+  background:cadetblue;
+}
+.contact input
+{
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 50%;
+  background:transparent;
+  text-transform:capitalize;
+  color:#fff;
+  padding: 5px 10px;
+}
+.contact 
+{
+  padding:30px;
+}
+
+</style>
+
+<div class="how-section1">
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <img src="https://www.ivint.org/wp-content/uploads/2017/09/Family.jpg"  alt=""/>
+        </div>
+        <div class="col-md-6">
+            <h4>Family Event</h4>
+        <p class="text-muted"> This particular family event was filled with excitement, adventure, and conflict which is why it was one of the most memorable. To preface this story, my family lives in Fallon, so each year, us kids saved up all our money for our big annual family Christmas shopping trip to Reno. I was about five years old at the time along with my two sisters who were thirteen and fifteen years old as well as my little brother who was an infant.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Charity Events</h4>
+                        <p class="text-muted">Studies have also found that “individuals who are religious are more 
+                            likely to give money to charitable organizations” and they are also more likely to give more money
+                             than those who are not religious.[12] Among those individuals are members of American religious communities, 
+                             about whom the Institute for Social Policy and Understanding conducted a recent study regarding philanthropic 
+                             and charitable giving.[13] </p>
+        </div>
+        <div class="col-md-6 how-img">
+            <img src="https://cdn.thelifeyoucansave.org/uploads/2019/11/Screen-Shot-2015-07-13-at-1.53.34-PM.png"  alt=""/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 how-img">
+             <img src="https://cdn.wealthygorilla.com/wp-content/uploads/2015/11/Top-10-Steps-to-Preparing-an-Awesome-Business-Event.jpg" alt=""/>
+        </div>
+        <div class="col-md-6">
+            <h4>Business Events</h4>
+                        <p class="text-muted">Many do not realise there are so many different types of business events. This is because they all have similarities as they all bring people together in a face-to-face situation to exchange ideas and information. Well if I told you that there are eight main types of events this sector covers; would you be able to identify the main differences that makes each one unique? If not, then this blog
+                             will give you a better understanding of the different types of events that businesses can hold.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Culture Events</h4>
+                        <p class="text-muted">The EIC has inspired such confidence among our stakeholders, our contract with the City now specifically requires the use of the Event Impact Calculator in determining the direct spend impact for our meetings and events industry. The level of expertise 
+                            brought into the adaptation of the calculator ensures that moving forward, we continuously provide the most accurate direct spend and economic impact data for our destination.</p>
+        </div>
+        <div class="col-md-6 how-img">
+            <img src="https://media.istockphoto.com/photos/world-culture-earth-day-picture-id1319902995?b=1&k=20&m=1319902995&s=170667a&w=0&h=uLtoLi0HtEMTA-IQQrBm35G5lKMD91oHAy1v1ZDhbTQ=" alt=""/>
+        </div>
+    </div>
+</div>
+<div class="contact">
+    <div class="container ">
+     
+ <form method="post">
+{% csrf_token %}
+<h4>CONTACT</h4>
+<input type="text" name="name" placeholder="enter your name"><br>
+<input type="number" name="mobile" placeholder="enter you mobile number"><br>
+<input type="email" name="email" placeholder="enter your email"><br>
+<input type="text" name="message" placeholder="write your message"><br>
+  <button type="submit" class="formbtn">Send</button>
+ </form>
+</div>
+</div>
+{% endblock %}

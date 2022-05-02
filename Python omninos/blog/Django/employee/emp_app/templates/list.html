@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% block content %}
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+  <h1 class="display-4 font-italic" ><i class="fa fa-users"></i>Employee List</h1>
+<table style="width:100%">
+  <tr>
+    <th>name</th>
+    <th>salary</th>
+      <th>position</th>
+      <th>   <a href="{% url 'form' %}" class="btn btn-outline-success">
+        <i class="fa fa-plus"></i>Add New
+    </a></th>
+
+  </tr>
+  {% for i in list %}
+  <tr>
+      <td>{{i.name}}</td>
+      <td>{{i.salary}}</td>
+      <td>{{ i.position}}</td>
+      <td> 
+        <a href={% url 'edit' i.id %}>Edit</a>
+        <form action="{% url 'del' i.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+
+</td>
+
+
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+ {% endblock content %}

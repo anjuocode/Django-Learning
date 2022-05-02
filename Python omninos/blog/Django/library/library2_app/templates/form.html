@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<h1 class="display-4 font-italic" ><i class="fa fa-bus" aria-hidden="true"></i>Library Management</h1>
+
+<form method="POST" action="">
+    {% csrf_token %}
+
+<div class='row'>
+<div class="col-md-4">
+    {{ form.stu_name|as_crispy_field }}
+</div>
+<div class="col-md-4">
+    {{ form.stu_id|as_crispy_field }}
+</div>
+<div class="col-md-4">
+    {{ form.Book_name|as_crispy_field }}
+</div>
+</div>
+
+{% comment %} <div class='row'>
+    <div class="col-md-6">
+       {{ form.issue_date|as_crispy_field }}
+    </div>
+    <div class="col-md-6">
+        {{ form.return_date|as_crispy_field }}
+    </div> {% endcomment %}
+</div>
+<div class="row">
+    <div class="col-md-6">
+    <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-database"></i> SUBMIT</button>
+    </div>
+    <div class="col-md-6">
+    <a href="{% url 'list' %}" class="btn btn-secondary btn-lg btn-block"><i class="fa fa-backward"></i> Back To List</a>
+    </div>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+<h1>Shop Service</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{form}}
+<button type="submit">Submit</button>
+</form>
+<a href="{% url 'list' %}">Back to list</a>

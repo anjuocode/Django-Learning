@@ -1,0 +1,70 @@
+
+    <style>
+        .navbar-expand-lg{
+            background: darkblue;
+        }
+  
+          .nav-link
+          {
+            color:#fff;
+          }
+          .dropdown-menu
+          {
+            background-color:dodgerblue;
+          }
+          body {
+            font-family: 'Alegreya Sans', sans-serif;
+        }
+    </style>
+    <body>
+        {% block content %}
+         {% endblock %}
+<nav class="navbar navbar-expand-lg">
+
+    <a class="navbar-brand" href="/">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-link active"> Hello , {{user.first_name}} </li>
+        <a class="nav-active" ></a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'form' %}">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+       
+        {% endif %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Features
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'rafting' %}">Rafting</a>
+            <a class="dropdown-item" href="{% url 'parag' %}"> Paraglding</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'trek' %}">Treking</a>
+          </div>
+        </li>
+  
+      </ul>
+      <form class="form-inline my-2 my-lg-0 " method="post">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+      </form>
+    </div>
+  </nav>
+</body>

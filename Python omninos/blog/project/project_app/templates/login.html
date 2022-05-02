@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field1 {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field1:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn1 {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn1:hover {
+  opacity: 1;
+}
+.form
+{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+</style>
+
+
+<div class="form">
+<form method="post" style="max-width:500px;margin:auto">
+  {% csrf_token %}
+  <h2>Register Form</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field1" type="text" placeholder="Username" name="username">
+  </div>
+
+
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field1" type="password" placeholder="Password" name="password">
+  </div>
+
+  <button type="submit" class="btn1">Login</button>
+  {% for message in messages%}
+  {{message}}
+  {% endfor %}
+</form>
+</div>
+{% endblock %}
+
